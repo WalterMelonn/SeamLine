@@ -1,0 +1,24 @@
+
+# генератор нулевого массива
+line = []
+# длина массива
+n = 11
+new_element = 1
+for s in range(n):
+    line.append(new_element)  # добавляем его в список
+
+m = random.randint(n - (n - 1), n - 2)
+line[m] = 0
+line[m - 1] = 0
+line[m + 1] = 0
+print("StartLine", line)
+
+md = random.randint(-1, 1)
+m = m + md
+
+lineTwo = line
+lineTwo[m] = 0
+lineTwo[m - 1] = 0
+lineTwo[m + 1] = 0
+print("Line2", lineTwo)
+# суммируем нулевой и единичный
