@@ -1,7 +1,7 @@
 import random
 # new comment
 # second comment
-print("no goddamned")
+print("goddamned")
 # 1) новый код: генерируем 0 массив
 # generate void string
 line = []
