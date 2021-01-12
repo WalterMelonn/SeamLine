@@ -1,16 +1,23 @@
 import random
-# new comment
-# second comment
-print("no goddamned")
-# 1) новый код: генерируем 0 массив
-# generate void string
-line = []
-# n - длина массива
-n = 11
-# заполнять будем символами new_element
-new_element = 1
-for s in range(n):
-    line.append(new_element)  # заполнили массив new_elemetами (добавляем их в список)
+
+
+# Function which generates null massive
+def null_string_gen():
+    # 0) новый код: генерируем 0 массив
+    # generate void string
+    line = []
+    # n - длина массива
+    n = 10
+    # заполнять будем символами new_element
+    new_element = 1
+    for s in range(n):
+        line.append(new_element)  # заполнили массив new_elemetами (добавляем их в список)
+    print(line)
+    return list, n
+
+
+null_string_gen()
+"""
 # 2) take 1 string
 # modify by random inject "000"
 m = random.randint(n - (n - 3), n - 3)
@@ -28,7 +35,7 @@ for i in range(100):
 
     md = random.randint(-1, 1)
     # print(m)
-    if m == (n-(n-2)):
+    if m == (n - (n - 2)):
         m -= 1
         md = -1
         # md = -1
@@ -54,4 +61,4 @@ for i in range(100):
 
     print("Line2", lineTwo)
     lnum += 1
-print("Сгенерировано:", lnum, "строк")
+print("Сгенерировано:", lnum, "строк")"""
