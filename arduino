@@ -1,0 +1,70 @@
+const int A = 2;
+const int B = 3;
+const int C = 4;
+const int D = 5;
+const int E = 6;
+const int F = 7;
+const int G = 8;
+
+void setup() {
+  pinMode(A, OUTPUT);
+  pinMode(B, OUTPUT);
+  pinMode(C, OUTPUT);
+  pinMode(D, OUTPUT);
+  pinMode(E, OUTPUT);
+  pinMode(F, OUTPUT);
+  pinMode(G, OUTPUT);
+}
+
+void loop() {
+  for (int i=1; i<=9; i++){ 
+    for (int j=0; j<=1; i++){
+  	  delay(1000);
+      migat(j,i);
+  	}
+  }
+  delay(1000000);
+}
+
+// зажигает на 7-сегментном индикаторе заданную цифру
+void printNumber(int num){
+  int numbers[11][8] = { // многомерный массив, в котором описаны состояния сегментов A…G и DP для цифр от 0 до 9
+    {1,1,1,1,1,1,0,0}, // 0 
+    {0,1,1,0,0,0,0,0}, // 1 
+    {1,1,0,1,1,0,1,0}, // 2 
+    {1,1,1,1,0,0,1,0}, // 3 
+    {0,1,1,0,0,1,1,0}, // 4 
+    {1,0,1,1,0,1,1,0}, // 5 
+    {1,0,1,1,1,1,1,0}, // 6 
+    {1,1,1,0,0,0,0,0}, // 7 
+    {1,1,1,1,1,1,1,0}, // 8 
+    {1,1,1,1,0,1,1,0}, // 9 
+    {0,0,0,0,0,0,0,0}  // выключить индикатор
+  };
+  lightSegments(numbers[num]);
+}
+
+// зажигает заданные сегменты
+void lightSegments(int segments[]){
+  digitalWrite(A, segments[0]);
+  digitalWrite(B, segments[1]);
+  digitalWrite(C, segments[2]);
+  digitalWrite(D, segments[3]);
+  digitalWrite(E, segments[4]);
+  digitalWrite(F, segments[5]);
+  digitalWrite(G, segments[6]);
+}
+
+void migat(int decs, int ones){
+  printNumber(decs); 
+  delay(500);
+  
+  printNumber(10);
+  delay(500);
+  
+  printNumber(ones);
+  delay(500);
+  
+  printNumber(10);
+  
+ }
