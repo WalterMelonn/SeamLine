@@ -20,13 +20,7 @@ void setup() {
 }
 
 void loop() {
-  if (double.click_flag == True) {
-  	tone(9, 700, 300);
-    rejim2();
-  else{
     rejim1();
-  }
-  
 }
 
 // зажигает на 7-сегментном индикаторе заданную цифру
@@ -73,7 +67,7 @@ void migat(int decs, int ones){
   printNumber(10);
  }
 
-rejim1(){
+void rejim1(){
 for (int i=0; i<2; i++){ 
     delay(1000);
     for (int j=0; j<10; j++){
@@ -94,6 +88,6 @@ for (int i=0; i<2; i++){
   }
 }
 
-rejim2(){
+void rejim2(){
   //pass;
 }
